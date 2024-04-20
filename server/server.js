@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import connect from './database/conn.js';
 import router from './router/route.js';
+import notesRouter from './router/feedbackroutes.js'; // Import notesRouter using ES module syntax
 
 const app = express();
 
@@ -12,7 +13,6 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.disable('x-powered-by'); // less hackers know about our stack
 
-
 const port = 8080;
 
 /** HTTP GET Request */
@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
     res.status(201).json("Hello world");
 });
 
-
 /** api routes */
-app.use('/api', router)
+app.use('/api', router);
+app.use('/api/notes', notesRouter); // Use imported notesRouter
 
 /** start server only when we have valid connection */
 connect().then(() => {
@@ -36,4 +36,3 @@ connect().then(() => {
 }).catch(error => {
     console.log("Invalid database connection...!");
 })
-
