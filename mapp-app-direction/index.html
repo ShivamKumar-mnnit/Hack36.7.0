@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Real-Time Location Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/lrm-graphhopper@1.0.3/dist/lrm-graphhopper.js"></script>
+    <style>
+      #map {
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Create a map centered at the specified coordinates
+      const map = L.map("map").setView([-41.2858, 174.78682], 8);
+
+      // Add OpenStreetMap tiles as the base layer
+      const mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+      L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "Map data © " + mapLink,
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Define waypoints for routing
+      const waypoints = [
+        L.latLng(25.4956, 81.8572),
+        L.latLng(24.4956, 81.8572),
+      ];
+
+      // Create a routing control with GraphHopper router
+      const routing = L.Routing.control({
+        waypoints,
+        routeWhileDragging: true,
+        router: L.Routing.graphHopper("YOUR_API_KEY"), // Replace with your API key
+      });
+
+      // Add the routing control to the map
+      routing.addTo(map);
+    </script>
+  </body>
+</html>
