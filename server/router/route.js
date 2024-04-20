@@ -18,7 +18,8 @@ router.route('/hospitallogin').post(controller.verifyUser,isHospital,controller.
 router.route('/policelogin').post(controller.verifyUser,isPolice,controller.login); // login in app
 
 
-router.route('/location').post(controller.createLocation); // register user
+
+router.route('/location').post(controller.createLocation); // saving cars locations
 
 
 
@@ -29,7 +30,7 @@ router.route('/verifyOTP').get(controller.verifyUser, controller.verifyOTP) // v
 router.route('/createResetSession').get(controller.createResetSession) // reset all the variables
 
 
-
+router.route('/idLocation').get(controller.getUserByUeId) // user with username
 router.route('/getlocation').get(controller.getLocationByName); // register user
 
 

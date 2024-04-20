@@ -62,21 +62,6 @@ const getUserCurrAdd = async(lat,lon)=>{
     tooltipAnchor: [16, -28],
     shadowSize: [41, 41],
   });
-
-
-
-
-  // // Define yellowIcon here
-  // const yellowIcon = L.icon({
-  //   iconUrl:
-  //     "https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png",
-  //   iconSize: [25, 41],
-  //   iconAnchor: [12, 41],
-  //   popupAnchor: [1, -34],
-  //   tooltipAnchor: [16, -28],
-  //   shadowSize: [41, 41],
-  // });
-
  
   function LocationMarker({ position }) {
     const map = useMap();
