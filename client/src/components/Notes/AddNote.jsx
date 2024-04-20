@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import noteContext from './Context/NoteContext';
 import './AddNote.css';
+import Header from '../../pages/homepage/Header';
 
 function AddNote(props) {
   const context = useContext(noteContext);
@@ -9,6 +10,7 @@ function AddNote(props) {
   const navigate = useNavigate();
 
   const [note, setNote] = useState({ username: '', accidentreason: '', feedback: '', phone: '' });
+  const [notification, setNotification] = useState(null);
 
   useEffect(() => {
     // Define a function to fetch notes only once when the component mounts
@@ -20,18 +22,29 @@ function AddNote(props) {
     fetchNotes();
   }, []); // Empty dependency array to run effect only once
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    addNote(note.username, note.accidentreason, note.feedback, note.phone, new Date().toISOString());
-    setNote({ username: '', accidentreason: '', feedback: '', phone: '' });
+    const success = await addNote(note.username, note.accidentreason, note.feedback, note.phone, new Date().toISOString());
+    if (success) {
+      alert('Note added successfully!');
+      setNote({ username: '', accidentreason: '', feedback: '', phone: '' });
+    } else {
+      setNotification('Note added successfully!');
+      setTimeout(() => {
+        setNotification(null);
+      }, 3000); // Hide notification after 3 seconds
+    }
   };
+  
 
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
 
   return (
+    
     <div className='add-note-container'>
+      <Header/>
       <div className="login-box">
         <h2>Give feedback</h2>
         <form>
@@ -65,7 +78,7 @@ function AddNote(props) {
               required
               value={note.phone}
               onChange={onChange}
-              placeholder="Enter your phone number"
+              
             />
             <label>Phone</label>
           </div>
@@ -78,7 +91,7 @@ function AddNote(props) {
               value={note.username}
               onChange={onChange}
               minLength={5}
-              placeholder="Enter more information"
+              
             />
             <label>More Information</label>
           </div>
@@ -91,13 +104,14 @@ function AddNote(props) {
               value={note.feedback}
               onChange={onChange}
               minLength={5}
-              placeholder="Enter feedback"
+             
             />
             <label>Enter a feedback</label>
           </div>
           <button className='button2' onClick={handleClick}>Submit</button>
         </form>
       </div>
+      {notification && <div className="notification">{notification}</div>}
     </div>
   );
 }

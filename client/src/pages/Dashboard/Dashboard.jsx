@@ -1,8 +1,13 @@
 import React from 'react';
 import Mapp from '../Map2/LocationTracker';
+import '../../styles/Userdash.css';
+import Noteitem from '../../components/Notes/NoteItem';
+import AddNote from '../../components/Notes/AddNote';
+
 // import Mapp from '../Map/Mapp';
 
 // import { GoDotFill } from 'react-icons/go';
+import Notes from './../../components/Notes/Notes';
 
 const Dashboard = () => {
 
@@ -17,12 +22,11 @@ const Dashboard = () => {
         {/* <div className="flex flex-col"> */}
 
             <div className="m-1 justify-center" >
-                
+                <h1 className='map'>Your current Locations</h1>
 
             {/* <div class="flex flex-col md:flex-row justify-center ">
     <div class="flex md:flex-row">
       <div class="flex-1 p-4"> */}
-
 
 
 
@@ -73,7 +77,7 @@ const Dashboard = () => {
       </div>
     </div>
   </div>
-
+  
 
 
 

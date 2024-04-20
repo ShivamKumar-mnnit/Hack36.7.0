@@ -29,6 +29,7 @@ import LobbyScreen from "./screens/Lobby";
 import RoomPage from "./screens/Room";
 
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -55,12 +56,13 @@ const router = createBrowserRouter(
         <Route path="protected" element={<Protected />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="cars" element={<Cars />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard" element={<NoteState><Dashboard/></NoteState>} />
         <Route path="addnote" element={<NoteState><AddNote /></NoteState>} />
         <Route path="note" element={<NoteState><Notes/></NoteState>} />
         <Route path="noteitem" element={<NoteState><Noteitem/></NoteState>} />
         <Route path="lobby" element={<LobbyScreen />} />
         <Route path="room/:roomId" element={<RoomPage />} />
+        
         
         {/* <Route element={<NoteState><AddNote  /></NoteState>} exact path='addnote' ></Route>    
       <Route element={<NoteState><Noteitem  /></NoteState>} exact path='noteitem' ></Route>

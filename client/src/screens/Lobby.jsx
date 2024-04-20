@@ -13,53 +13,59 @@ const LobbyScreen = () => {
   const handleSubmitForm = useCallback(
     (e) => {
       e.preventDefault();
-      socket.emit("room:join", { name, room });
+      if (socket) {
+        socket.emit("room:join", { name, room });
+      } else {
+        console.error("Socket object is null.");
+      }
     },
     [name, room, socket]
   );
 
   const handleJoinRoom = useCallback(
     (data) => {
-      const {name, room } = data;
+      const { name, room } = data;
       navigate(`/room/${room}`);
     },
     [navigate]
   );
 
   useEffect(() => {
-    socket.on("room:join", handleJoinRoom);
-    return () => {
-      socket.off("room:join", handleJoinRoom);
-    };
+    if (socket) {
+      socket.on("room:join", handleJoinRoom);
+      return () => {
+        socket.off("room:join", handleJoinRoom);
+      };
+    } else {
+      console.error("Socket object is null.");
+    }
   }, [socket, handleJoinRoom]);
+
+  console.log("Socket object:", socket);
 
   return (
     <div className="login-box">
       <h1>Lobby</h1>
       <form onSubmit={handleSubmitForm}>
         <div className="user-box">
-        <label htmlFor="name"></label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="user-box">
-        <br />
-        <label htmlFor="room">Room Number</label>
-        <input
-          type="text"
-          id="room"
-          value={room}
-          onChange={(e) => setRoom(e.target.value)}
-        />
+          <label htmlFor="room">Room Number</label>
+          <input
+            type="text"
+            id="room"
+            value={room}
+            onChange={(e) => setRoom(e.target.value)}
+          />
         </div>
-        <br />
-        <button className="join-meet">
-        
-          Join</button>
+        <button className="join-meet">Join</button>
       </form>
     </div>
   );
