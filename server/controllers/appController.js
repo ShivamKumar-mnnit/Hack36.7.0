@@ -382,3 +382,32 @@ export async function getUserByUeId(req, res) {
     }
 }
 
+/** GET: http://localhost:8080/api/users */
+export async function getAllUsers(req, res) {
+    try {
+        // Query the database to retrieve all users
+        const users = await UserModel.find();
+
+        // Sending the users back as a response
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("Error fetching all users:", error);
+        // Sending an error response back
+        res.status(500).json({ error: "Failed to fetch all users." });
+    }
+}
+
+
+export async function getAllLocations(req, res) {
+    try {
+        // Query the database to retrieve all locations
+        const locations = await Location.find();
+
+        // Sending the locations back as a response
+        res.status(200).json(locations);
+    } catch (error) {
+        console.error("Error fetching all locations:", error);
+        // Sending an error response back
+        res.status(500).json({ error: "Failed to fetch all locations." });
+    }
+}

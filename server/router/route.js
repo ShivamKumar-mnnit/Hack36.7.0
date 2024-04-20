@@ -32,6 +32,8 @@ router.route('/createResetSession').get(controller.createResetSession) // reset 
 
 router.route('/idLocation').get(controller.getUserByUeId) // user with username
 router.route('/getlocation').get(controller.getLocationByName); // register user
+router.route('/getalllocation').get(controller.getAllLocations); // register user
+router.route('/getallusers').get(controller.getAllUsers); // register user
 
 
 /** PUT Methods */
