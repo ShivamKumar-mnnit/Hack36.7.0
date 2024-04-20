@@ -3,6 +3,9 @@
     "version": "0.0.1",
     "description": "Sample testing",
     "dependencies": {
+        "body-parser": "^1.20.2",
+        "express": "^4.19.2",
+        "mongoose": "^8.3.2",
         "serialport": "^9.0.1",
         "socket.io": "^4.7.5"
     }
