@@ -44,6 +44,7 @@ const router = createBrowserRouter(
             </ProtectRoute>
           }
         />
+        
         <Route path="recovery" element={<Recovery />} />
         <Route path="reset" element={<Reset />} />
         <Route path="password" element={<Password />} />

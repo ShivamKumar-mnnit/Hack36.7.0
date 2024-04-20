@@ -23,7 +23,7 @@ export const UserSchema = new mongoose.Schema({
     profile: { type: String},
     driving_lic:{type: String},
     alt_img:{type:String},
-    ue_id:{type: Number},
+    ue_id:{type: String},
     role:{type: Number,default:0},
     isverified:{type: Boolean},
     distance:{type:Number}
