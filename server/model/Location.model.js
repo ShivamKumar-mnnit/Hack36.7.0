@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const LocationSchema = new mongoose.Schema({
-    name:{type:String,unique: true,},
+    name:{type:String},
     longitude:{type: Number},
     latitude:{type: Number}  
 },
@@ -9,6 +9,5 @@ export const LocationSchema = new mongoose.Schema({
     timestamps: true,
 }
 );
-
 
 export default mongoose.model.Locations || mongoose.model('Location', LocationSchema);

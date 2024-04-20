@@ -357,3 +357,57 @@ export async function updateLocation(req, res) {
     }
 }
 
+
+export async function getUserByUeId(req, res) {
+    try {
+        const { ue_id } = req.body;
+
+        if (!ue_id) {
+            return res.status(400).json({ error: "ue_id parameter is missing in the request." });
+        }
+
+        // Query the database to retrieve the user by ue_id
+        const user = await UserModel.findOne({ ue_id: ue_id });
+
+        if (!user) {
+            return res.status(404).json({ error: "User with the provided ue_id not found." });
+        }
+
+        // Sending the user back as a response
+        res.status(200).json(user);
+    } catch (error) {
+        console.error("Error fetching user by ue_id:", error);
+        // Sending an error response back
+        res.status(500).json({ error: "Failed to fetch user by ue_id." });
+    }
+}
+
+/** GET: http://localhost:8080/api/users */
+export async function getAllUsers(req, res) {
+    try {
+        // Query the database to retrieve all users
+        const users = await UserModel.find();
+
+        // Sending the users back as a response
+        res.status(200).json(users);
+    } catch (error) {
+        console.error("Error fetching all users:", error);
+        // Sending an error response back
+        res.status(500).json({ error: "Failed to fetch all users." });
+    }
+}
+
+
+export async function getAllLocations(req, res) {
+    try {
+        // Query the database to retrieve all locations
+        const locations = await Location.find();
+
+        // Sending the locations back as a response
+        res.status(200).json(locations);
+    } catch (error) {
+        console.error("Error fetching all locations:", error);
+        // Sending an error response back
+        res.status(500).json({ error: "Failed to fetch all locations." });
+    }
+}

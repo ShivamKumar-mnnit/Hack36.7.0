@@ -3,12 +3,33 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import icon from "./constant";
+import axios from 'axios';
 
 export default function LocationTracker() {
 
   const [latitude,setLatitude]=useState();
   const [longitude,setLongitude]=useState();
   const [add,setAdd]=useState();
+const[users,setUsers]=useState([]);
+
+
+
+const getAllUsers = async () => {
+  try {
+    const response = await axios.get("http://localhost:8080/api/getalllocation");
+    console.log("Response:", response); // Log the response
+    setUsers(response.data);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+  }
+};
+
+useEffect(() => {
+  console.log("Users:", users); // Log the users state
+  setUsers(users)
+}, [users]); // Run this effect whenever users state changes
+
+if(!users)<>loading..</>
 
 
   let apiKey = "ccfd0bf34b6e4e9aaef2073a924aa6f6"
@@ -62,21 +83,6 @@ const getUserCurrAdd = async(lat,lon)=>{
     tooltipAnchor: [16, -28],
     shadowSize: [41, 41],
   });
-
-
-
-
-  // // Define yellowIcon here
-  // const yellowIcon = L.icon({
-  //   iconUrl:
-  //     "https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png",
-  //   iconSize: [25, 41],
-  //   iconAnchor: [12, 41],
-  //   popupAnchor: [1, -34],
-  //   tooltipAnchor: [16, -28],
-  //   shadowSize: [41, 41],
-  // });
-
  
   function LocationMarker({ position }) {
     const map = useMap();
@@ -92,15 +98,21 @@ const getUserCurrAdd = async(lat,lon)=>{
       }
     }, [map, position]);
 
+
+
+    
+
     return position ? (
       <Marker position={position} icon={icon}>
         <Popup>
-          {add} <br /> Your coordinate is: Lat: {position.lat}, Long:{" "}
+          {add} <br /> Your coordinate <button onClick={getAllUsers}>abvc</button> is: Lat: {position.lat}, Long:{" "}
           {position.lng} <br /> Accuracy: {position.accuracy}
         </Popup>
       </Marker>
     ) : null;
   }
+
+  
 
 
   const [currentPosition, setCurrentPosition] = useState(null);
@@ -183,18 +195,21 @@ const getUserCurrAdd = async(lat,lon)=>{
           attribution='© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {yellowMarkers.map((marker, index) => (
-          <Marker
-            key={index}
-            position={[marker.lat, marker.lng]}
-            icon={HospitalIcon}
-          >
-            <Popup>
-              Hospital Marker {index + 1} <br /> Lat: {marker.lat}, Long:{" "}
-              {marker.lng}
-            </Popup>
-          </Marker>
-        ))}
+
+
+{users.map((marker, index) => (
+      <Marker
+        key={index}
+        position={[marker.latitude, marker.longitude]}
+        icon={HospitalIcon}
+      >
+        <Popup>
+          Hospital Marker {index + 1} <br /> Lat: {marker.latitude}, Long:{" "}
+          {marker.longitude}
+        </Popup>
+      </Marker>
+    ))}
+
         {blueMarkers.map((marker, index) => (
           <Marker
             key={index}
