@@ -1,5 +1,6 @@
 import React from "react";
 import { MenuIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 function Header() {
   const authToken = localStorage.getItem("authToken");
@@ -29,10 +30,14 @@ function Header() {
             </>
           )}
           {authToken && (
-            <button className="primary-button">Dashboard</button>
+            <>
+              <button className="primary-button">Dashboard</button>
+              <Link to="/dashboard" className="primary-button">
+                Map
+              </Link>
+            </>
           )}
           {/* <div className="hidden max-w-xl md:grid gap-4 grid-cols-4 text-right"> */}
-       
           {/* </div> */}
         </div>
       </div>
