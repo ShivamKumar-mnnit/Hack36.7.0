@@ -38,7 +38,7 @@ const LobbyScreen = () => {
       <h1>Lobby</h1>
       <form onSubmit={handleSubmitForm}>
         <div className="user-box">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name"></label>
         <input
           type="text"
           id="name"
