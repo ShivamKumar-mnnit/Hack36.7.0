@@ -10,6 +10,7 @@ import Recovery from "./pages/Authentication/Recovery";
 import Reset from "./pages/Authentication/Reset";
 import Password from "./pages/Authentication/Password";
 import Username from "./pages/Authentication/Username";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 
 
@@ -23,17 +24,21 @@ const router = createBrowserRouter(
     <>
       {/* <Route path="/" element={<Layout />}> */}
 
-
-
-        <Route path="/" element={<Register />} />
-        <Route path="adminpage" element={<Admin />} />
-        <Route path="profile" element={<ProtectRoute><Profile /></ProtectRoute>} />
-        <Route path="recovery" element={<Recovery />} />
-        <Route path="reset" element={<Reset />} />
-        <Route path="password" element={<Password />} />
-        <Route path="username" element={<Username />} />
-       
-     
+      <Route path="/" element={<Register />} />
+      <Route path="adminpage" element={<Admin />} />
+      <Route
+        path="profile"
+        element={
+          <ProtectRoute>
+            <Profile />
+          </ProtectRoute>
+        }
+      />
+      <Route path="recovery" element={<Recovery />} />
+      <Route path="reset" element={<Reset />} />
+      <Route path="password" element={<Password />} />
+      <Route path="username" element={<Username />} />
+      <Route path="dashboard" element={<Dashboard />} />
       {/* </Route> */}
     </>
   ),
