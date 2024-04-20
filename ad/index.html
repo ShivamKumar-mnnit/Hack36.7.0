@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance Monitor</title>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Distance Monitor</h1>
+    <div id="distanceDisplay">Distance: </div>
+
+    <script>
+        var socket = io();
+
+        socket.on('distance', function(data) {
+            // Update the distance display on the webpage
+            $('#distanceDisplay').text('Distance: ' + data.distance + ' cm');
+        });
+    </script>
+</body>
+</html>
