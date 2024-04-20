@@ -56,6 +56,8 @@ const router = createBrowserRouter(
         <Route path="addnote" element={<NoteState><AddNote /></NoteState>} />
         <Route path="note" element={<NoteState><Notes/></NoteState>} />
         <Route path="noteitem" element={<NoteState><Noteitem/></NoteState>} />
+        <Route path="/"></Route>
+        
         
         {/* <Route element={<NoteState><AddNote  /></NoteState>} exact path='addnote' ></Route>    
       <Route element={<NoteState><Noteitem  /></NoteState>} exact path='noteitem' ></Route>

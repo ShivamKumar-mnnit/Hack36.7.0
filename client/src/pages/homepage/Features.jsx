@@ -6,6 +6,7 @@ import {
   } from "@heroicons/react/solid";
   import React from "react";
   import Feature from "./FeatureItem";
+  import { Link } from "react-router-dom";
   
   function Features() {
     return (
@@ -42,7 +43,7 @@ import {
         />
         </div>
   
-        <button className="primary-button mt-14">Sign up Now</button>
+        <Link to="/sign-up" button className="primary-button mt-14">Sign up Now </Link>
   
       </section>
     );
