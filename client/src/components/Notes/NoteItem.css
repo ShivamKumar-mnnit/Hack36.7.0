@@ -1,0 +1,57 @@
+/* Define a class for the table container (e.g., if you're using Bootstrap) */
+.table-container {
+  
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+  }
+  
+  /* Apply responsive styles to the table */
+  .table {
+    background-color:violet;
+    width: 100%; /* Make the table take up the full width of its container */
+    border-collapse: collapse; /* Merge table borders */
+  }
+  
+  /* Define styles for table headers and table cells */
+  .table th,
+  .table td {
+    padding: 8px; /* Add some padding for readability */
+    text-align: left; /* Align text to the left for better readability on small screens */
+  }
+  
+  /* Optional: Define styles for table header cells */
+  .table th {
+    background-color: #f2f2f2; /* Light background color for header cells */
+    font-weight: bold; /* Make header text bold */
+  }
+  
+  /* Apply a max-width to the table for very small screens */
+  @media screen and (max-width: 600px) {
+    .table-container {
+      overflow-x: auto;
+    }
+  
+    .table {
+      max-width: 100%; /* Limit the maximum width of the table */
+    }
+  
+    /* Stack table headers and cells vertically */
+    .table thead {
+      display: none; /* Hide the table header row */
+    }
+  
+    .table tbody td {
+      display: block; /* Display table cells as block elements */
+      text-align: left; /* Align text to the left for better readability */
+    }
+  
+    /* Add some spacing between table rows */
+    .table tbody tr {
+      margin-bottom: 10px;
+    }
+  
+    /* Display table headers as table cells for small screens */
+    .table th {
+      /* display: table-cell; */
+    }
+  }
+  

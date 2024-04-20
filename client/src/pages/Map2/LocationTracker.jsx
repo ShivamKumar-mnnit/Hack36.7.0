@@ -5,6 +5,17 @@ import L from "leaflet";
 import icon from "./constant";
 
 export default function LocationTracker() {
+  // Define yellowIcon here
+  const yellowIcon = L.icon({
+    iconUrl:
+      "https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41],
+  });
+
   function LocationMarker({ position }) {
     const map = useMap();
     useEffect(() => {
@@ -16,40 +27,6 @@ export default function LocationTracker() {
           fillOpacity: 0.1,
         });
         circle.addTo(map);
-
-        // Fetch additional location details using Google Maps Geocoding API
-        const apiKey = ""; // Replace with your actual API key
-        const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.lat},${position.lng}&key=${apiKey}`;
-
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.results.length > 0) {
-              const result = data.results[0];
-              const formattedAddress = result.formatted_address;
-              const addressComponents = result.address_components;
-
-              // Extract specific address details
-              const city = addressComponents.find((component) =>
-                component.types.includes("locality")
-              )?.long_name;
-              const postalCode = addressComponents.find((component) =>
-                component.types.includes("postal_code")
-              )?.long_name;
-
-              console.log("Address Details:");
-              console.log("Formatted Address:", formattedAddress);
-              console.log("City:", city);
-              console.log("Postal Code:", postalCode);
-              console.log("Latitude:", position.lat);
-              console.log("Longitude:", position.lng);
-            } else {
-              console.log("No address details found.");
-            }
-          })
-          .catch((error) => {
-            console.error("Error fetching address details:", error);
-          });
       }
     }, [map, position]);
 
@@ -64,6 +41,17 @@ export default function LocationTracker() {
   }
 
   const [currentPosition, setCurrentPosition] = useState(null);
+  const yellowMarkers = [
+    { lat: 25.436249, lng: 81.846519 }, // Example coordinates   ,
+    { lat: 25.39904, lng: 81.874863 }, // Add more coordinates as needed   25.399040, 81.874863
+    { lat: 25.42477, lng: 81.830254 }, // Example coordinates   ,25.424770, 81.830254
+    { lat: 25.39904, lng: 81.874863 },
+    { lat: 25.385101, lng: 81.874222 }, // Example coordinates   ,25.385101, 81.874222
+    { lat: 25.390005, lng: 81.877296 }, //25.390005, 81.877296
+    { lat: 25.402531, lng: 81.869354 }, // Example coordinates 25.402531, 81.869354  ,
+    { lat: 25.494101, lng: 81.870712 }, //25.494101, 81.870712
+  ];
+
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -93,6 +81,18 @@ export default function LocationTracker() {
         attribution='© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      {yellowMarkers.map((marker, index) => (
+        <Marker
+          key={index}
+          position={[marker.lat, marker.lng]}
+          icon={yellowIcon}
+        >
+          <Popup>
+            Yellow Marker {index + 1} <br /> Lat: {marker.lat}, Long:{" "}
+            {marker.lng}
+          </Popup>
+        </Marker>
+      ))}
       <LocationMarker position={currentPosition} />
     </MapContainer>
   );
