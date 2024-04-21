@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://hack36.com"> 
-    <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height="24px" alt="Built at Hack36"> 
+    <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height="150spx" alt="Built at Hack36"> 
   </a>
 </p>
 
