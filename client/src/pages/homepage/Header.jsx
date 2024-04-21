@@ -3,7 +3,18 @@ import { MenuIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const authToken = localStorage.getItem("authToken");
+  const authToken = localStorage.getItem("token");
+  const Movetosignin = () => {
+  
+    history.push("login");
+    console.log("Move to sign-in");
+  };
+
+  const Movetosignup = () => {
+  
+    history.push("register");
+  
+  };
 
   return (
     <header className="container flex justify-between shadow-md md:shadow-none h-20 ">
@@ -25,13 +36,13 @@ function Header() {
           {/* Display different buttons based on authToken existence */}
           {!authToken && (
             <>
-              <button className="secondary-button">Sign in</button>
-              <button className="primary-button">Sign up</button>
+              <button onClick={Movetosignin}  className="secondary-button">Sign in</button>
+              <button onClick={Movetosignup} className="primary-button">Sign up</button>
             </>
           )}
           {authToken && (
             <>
-              <button className="primary-button">Dashboard</button>
+              <Link  to="/userdashboard" className="primary-button">Dashboard</Link>
               <Link to="/dashboard" className="primary-button">
                 Map
               </Link>

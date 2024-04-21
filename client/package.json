@@ -15,6 +15,7 @@
     "@react-google-maps/api": "^2.19.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "axios": "^1.6.8",
+    "chart.js": "^4.4.2",
     "face-api.js": "^0.22.2",
     "formik": "^2.4.5",
     "jwt-decode": "^3.1.2",
