@@ -7,7 +7,7 @@ function Header() {
   const Movetosignin = () => {
   
     history.push("login");
-    console.log("Move to sign-in");
+    
   };
 
   const Movetosignup = () => {
@@ -36,8 +36,8 @@ function Header() {
           {/* Display different buttons based on authToken existence */}
           {!authToken && (
             <>
-              <button onClick={Movetosignin}  className="secondary-button">Sign in</button>
-              <button onClick={Movetosignup} className="primary-button">Sign up</button>
+              <Link to='login' className="secondary-button">Sign in</Link>
+              <Link to='Register'  className="primary-button">Sign up</Link>
             </>
           )}
           {authToken && (
