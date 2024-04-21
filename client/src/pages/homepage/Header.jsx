@@ -42,7 +42,7 @@ function Header() {
           )}
           {authToken && (
             <>
-              <Link  to="/userdashboard" className="primary-button">Dashboard</Link>
+              <Link  to="/profile" className="primary-button">profile</Link>
               <Link to="/dashboard" className="primary-button">
                 Map
               </Link>

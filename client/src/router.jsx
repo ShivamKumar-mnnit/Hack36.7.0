@@ -40,9 +40,7 @@ const router = createBrowserRouter(
         <Route
           path="profile"
           element={
-            <ProtectRoute>
               <Profile />
-            </ProtectRoute>
           }
         />
         
@@ -64,10 +62,6 @@ const router = createBrowserRouter(
         <Route path="room/:roomId" element={<RoomPage />} />
         
         
-        {/* <Route element={<NoteState><AddNote  /></NoteState>} exact path='addnote' ></Route>    
-      <Route element={<NoteState><Noteitem  /></NoteState>} exact path='noteitem' ></Route>
-      <Route element={<NoteState><Notes /></NoteState>} exact path='note' ></Route>
-      <Route element={<NoteState><SearchBar  /></NoteState>} exact path='search' ></Route> */}
   
     </>
   ),

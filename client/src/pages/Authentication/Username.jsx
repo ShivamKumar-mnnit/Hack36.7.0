@@ -10,9 +10,7 @@ import { useAuthStore } from '../../store/store'
 import styles from '../../styles/Username.module.css';
 
 export default function Username() {
-  const [role,setRole]=useState(0);
-
-
+ 
 
 
   const navigate = useNavigate();
@@ -30,11 +28,6 @@ export default function Username() {
       navigate('/password')
     }
   })
-
-  const handleRoleChange = e => {
-    setRole(e.target.value); // Convert value to integer
-    console.log(role);
-  };
 
 
 
@@ -65,13 +58,7 @@ export default function Username() {
 
                   <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username' />
 
-                  <input
-                className={styles.textbox}
-                type="number"
-                placeholder='Role'
-                value={role}
-                onChange={handleRoleChange}
-              />
+            
 
                   <button className={styles.btn} type='submit'>Let's Go</button>
               </div>

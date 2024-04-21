@@ -72,7 +72,6 @@ export default function Register() {
                   <input {...formik.getFieldProps('email')} className={styles.textbox} type="text" placeholder='Email*' />
                   <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username*' />
                   <input {...formik.getFieldProps('password')} className={styles.textbox} type="text" placeholder='Password*' />
-                  <input {...formik.getFieldProps('role')} className={styles.textbox} type="number" placeholder='role*' />
                   <button className={styles.btn} type='submit'>Register</button>
               </div>
 
