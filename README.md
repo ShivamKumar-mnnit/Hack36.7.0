@@ -1,4 +1,5 @@
-<h1 align="center">Safety and Accident Mitigation System</h1>
+<h1 align="center">SafetyNet360: Comprehensive Road Safety Solution  
+</h1>
 <p align="center">
   A comprehensive solution aimed at reducing the risk of vehicle accidents and improving emergency response times.
 </p>
