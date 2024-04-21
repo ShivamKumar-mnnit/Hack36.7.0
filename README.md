@@ -60,14 +60,18 @@ This project aims to improve safety and emergency response during accidents by u
 - Enhance safety and reduce accidents.
 - Enable real-time communication and consultation during emergencies.
 
-## Technology Stack
-1. React.js
-2. Python
-3. Arduino IDE
-4. Tailwind CSS
-5. Leaflet.js
-6. Geolocation API
-7. Socket.io
+## Tech Stack
+Here are the technologies used in this project:
+
+<div align="center">
+  <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React.js" />
+  <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python" />
+  <img src="https://img.icons8.com/color/48/000000/arduino.png" alt="Arduino IDE" />
+  <img src="https://img.icons8.com/color/48/000000/tailwind_css.png" alt="Tailwind CSS" />
+  <img src="https://img.icons8.com/color/48/000000/leaflet.png" alt="Leaflet.js" />
+  <img src="https://img.icons8.com/ios-filled/48/000000/geolocation.png" alt="Geolocation API" />
+  <img src="https://img.icons8.com/color/48/000000/socket-io.png" alt="Socket.io" />
+</div>
 
 ## Contributors
 Team Name: Hack Hawabaz
