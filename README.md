@@ -1,24 +1,30 @@
-<h1 align="center"></h1>
+<h1 align="center">Safety and Accident Mitigation System</h1>
 <p align="center">
+  A comprehensive solution aimed at reducing the risk of vehicle accidents and improving emergency response times.
 </p>
 
-<a href="https://hack36.com"> <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height=24px> </a>
+<p align="center">
+  <a href="https://hack36.com"> 
+    <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height="24px" alt="Built at Hack36"> 
+  </a>
+</p>
 
+## Introduction
+The Safety and Accident Mitigation System is a comprehensive solution aimed at reducing the risk of vehicle accidents and improving emergency response times. By integrating Arduino technology, real-time data analysis, predictive analytics, and advanced communication protocols, this project addresses key challenges in road safety. It offers features like collision detection, drowsiness monitoring, accident mapping, and real-time consultation with medical professionals to create a safer driving environment.
 
-## Introduction:
-  The Safety and Accident Mitigation System is a comprehensive solution aimed at reducing the risk of vehicle accidents and improving emergency response times. By integrating Arduino technology,
-  real-time data analysis, predictive analytics, and advanced communication protocols, this project addresses key challenges in road safety. It offers features like collision detection, drowsiness 
-  monitoring, accident mapping, and real-time consultation with medical professionals to create a safer driving environment.
-  
-## Demo Video Link:
-  <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/dQw4w9WgXcQ</a>
-  
-## Presentation Link:
-  <a (https://docs.google.com/presentation/d/15W3RdWqrslR2lIEBXS67QXvt_uDw5KJb/edit?usp=drive_link&ouid=105368874901972830405&rtpof=true&sd=true)"> PPT link here </a>
-  
-  
-## Table of Contents:
-# Safety and Accident Mitigation System
+## Demo Video
+[Watch the demo video on YouTube](https://youtu.be/dQw4w9WgXcQ)
+
+## Presentation Link
+[View the presentation](https://docs.google.com/presentation/d/15W3RdWqrslR2lIEBXS67QXvt_uDw5KJb/edit?usp=drive_link&ouid=105368874901972830405&rtpof=true&sd=true)
+
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Key Components](#key-components)
+3. [Usage](#usage)
+4. [Goals](#goals)
+5. [Technology Stack](#technology-stack)
+6. [Contributors](#contributors)
 
 ## Project Overview
 This project aims to improve safety and emergency response during accidents by utilizing Arduino, predictive analytics, real-time communication, and machine learning technologies. The solutions developed are designed to anticipate risks, mitigate potential accidents, and enhance emergency response times.
@@ -53,27 +59,24 @@ This project aims to improve safety and emergency response during accidents by u
 - Enhance safety and reduce accidents.
 - Enable real-time communication and consultation during emergencies.
 
-  
-## Technology Stack:
-  1) React.js
-  2) Python 
-  3) Arduino IDE
-  4) Tailwind CSS
-  5) Leaflet.js
-  6) Geolocation API
-  7) Socket.io
-  
+## Technology Stack
+1. React.js
+2. Python
+3. Arduino IDE
+4. Tailwind CSS
+5. Leaflet.js
+6. Geolocation API
+7. Socket.io
 
-## Contributors:
-
+## Contributors
 Team Name: Hack Hawabaz
 
+- [Shivam Kumar](https://github.com/ShivamKumar-mnnit)
+- [Anupam Singh](https://github.com/anupamxy)
+- [Shaswat Kapoor](https://github.com/shagithubrit)
+- [Yash Kumar](https://github.com/yash1721)
 
-* [Shivam Kumar]((https://github.com/ShivamKumar-mnnit))
-* [Anupam Singh](https://github.com/anupamxy)
-* [Shaswat Kapoor](https://github.com/shagithubrit)
-* [Yash Kumar](https://github.com/yash1721)
-
-
-### Made at:
-<a href="https://hack36.com"> <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height=24px> </a>
+## Made at
+<a href="https://hack36.com"> 
+  <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height="24px" alt="Built at Hack36"> 
+</a>
