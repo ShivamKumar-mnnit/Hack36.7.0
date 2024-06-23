@@ -14,7 +14,9 @@
 The Safety and Accident Mitigation System is a comprehensive solution aimed at reducing the risk of vehicle accidents and improving emergency response times. By integrating Arduino technology, real-time data analysis, predictive analytics, and advanced communication protocols, this project addresses key challenges in road safety. It offers features like collision detection, drowsiness monitoring, accident mapping, and real-time consultation with medical professionals to create a safer driving environment.
 
 ## Demo Video
-[Watch the demo video on YouTube](https://youtu.be/dQw4w9WgXcQ)
+[Watch the demo video1 on YouTube](https://youtu.be/HjiwIrQ-KF0)
+[Watch the demo video2 on YouTube](https://youtu.be/IGTRAuhPVWs).
+[Watch the demo video3 on YouTube](https://youtu.be/b1fQdEd0gnk).
 
 ## Presentation Link
 [View the presentation](https://docs.google.com/presentation/d/15W3RdWqrslR2lIEBXS67QXvt_uDw5KJb/edit?usp=drive_link&ouid=105368874901972830405&rtpof=true&sd=true)
