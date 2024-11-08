@@ -77,7 +77,7 @@ Team Name: Hack Hawabaz
 
 - [Shivam Kumar](https://github.com/ShivamKumar-mnnit)
 - [Anupam Singh](https://github.com/anupamxy)
-- [Shaswat Kapoor](https://github.com/shagithubrit)
+- [Shashwat Kapoor](https://github.com/shagithubrit)
 - [Yash Kumar](https://github.com/yash1721)
 
 ## Made at
